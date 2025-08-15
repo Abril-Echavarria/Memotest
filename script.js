@@ -30,6 +30,9 @@ let paresEncontrados = 0;
 let paresNecesarios = 0;
 let filas = 0;
 let columnas = 0;
+let tiempo = 0;
+let intervalo = null;
+
 
 
 jugar.addEventListener("click", () => {
@@ -43,10 +46,10 @@ jugar.addEventListener("click", () => {
         filas = 5; columnas = 8;
     }
 
-    iniciarJuego(filas, columnas);
+    iniciarJuego(filas, columnas, dificultad);
 });
 
-function iniciarJuego(filas, columnas) {
+function iniciarJuego(filas, columnas, dificultad) {
     tablero.innerHTML = ""; 
     const totalCartas = filas * columnas;
     paresNecesarios = totalCartas / 2;
@@ -58,11 +61,18 @@ function iniciarJuego(filas, columnas) {
 
     tablero.style.display = "grid";
     // auto-fit rellena tantas columnas como entren, minmax asegura tamaño adaptable
-    tablero.style.gridTemplateColumns = `repeat(auto-fit, minmax(80px, 1fr))`;
-    tablero.style.gap = "10px";
-    tablero.style.padding = "10px";
+    if (dificultad === "facil" || dificultad === "medio") {
+        tablero.style.gridTemplateColumns = `repeat(${columnas}, 100px)`;
+    } else {
+        tablero.style.gridTemplateColumns = `repeat(auto-fit, 80px)`;
+    }
+    
+    tablero.style.maxWidth = "fit-content"; 
     tablero.style.margin = "0 auto";
+    
     tablero.style.maxWidth = "100%";
+
+    iniciarTemporizador();
 
     cartas.forEach(imgSrc => {
         const carta = document.createElement("div");
@@ -89,6 +99,7 @@ function voltearCarta(carta){
                 } else {
                     paresEncontrados++;
                     if(paresEncontrados === paresNecesarios){
+                        detenerTemporizador();
                         cartelVictoria();
                     }
                 }
@@ -99,6 +110,7 @@ function voltearCarta(carta){
 }
 
 function cartelVictoria(){
+    document.getElementById("tiempoFinal").textContent = `Tu tiempo final: ${tiempo}s`;
     let modal = new bootstrap.Modal(document.getElementById('modalVictoria'));
     modal.show();
     const btnReiniciar = document.getElementById('reiniciarJuego');
@@ -106,4 +118,17 @@ function cartelVictoria(){
         modal.hide();               // Cerramos modal
         iniciarJuego(filas, columnas); // Reiniciamos juego con las mismas filas y columnas
     };
+}
+
+function iniciarTemporizador() {
+    tiempo = 0;
+    document.getElementById("tiempo").textContent = `0s`;
+    intervalo = setInterval(() => {
+        tiempo++;
+        document.getElementById("tiempo").textContent = `${tiempo}s`;
+    }, 1000);
+}
+
+function detenerTemporizador() {
+    clearInterval(intervalo);
 }

@@ -9,6 +9,17 @@ body {
     font-size: 2rem;
 }
 
+.navbar-toggler {
+    background-color: #972696; /* mismo color que el navbar */
+    border: 1.5px solid white; /* borde blanco */
+    padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
 #nivel.form-select {
     background-color: #b141ae;
     color: white;
@@ -26,6 +37,12 @@ body {
 .navbar select{
     background-color: #e477df;
 }
+
+.navbar-toggler{
+    color: #d0d0d0 !important;
+}
+
+
 
 .navbar .navbar-brand,
 .navbar h1,
@@ -127,7 +144,25 @@ body {
     background-color: #972696 !important;
 }
 
+.modal-body {
+    background-color: #972696 !important;
+    color: #d0d0d0;
+    
+}
+
 .btn{
     background-color: #ca5cc7 !important;
     border: none !important;
+}
+
+.tiempo{
+    color: #d0d0d0;
+    font-size: 1.3rem;
+}
+.flecha {
+    font-size: 40px;
+    margin-left: auto; 
+    float: right; 
+    margin-right: 0.5rem;
+    color: #d0d0d0;
 }
