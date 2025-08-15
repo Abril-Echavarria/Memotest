@@ -5,24 +5,25 @@ const nivel = document.getElementById("nivel");
 let imagenes = [
     "images/m1.png",
     "images/m2.png",
-    "images/m3.png",
-    "images/m4.png",
-    "images/m5.png",
     "images/m6.png",
+    "images/m11.png",
+    "images/m5.png",
+    "images/m13.png",
     "images/m7.png",
-    "images/m8.png",
+    "images/m16.png",
+    "images/m15.png",
+    "images/m3.png",
+    "images/m17.png",
+    "images/m12.png",
+    "images/m4.png",
+    "images/m14.png",
     "images/m9.png",
     "images/m10.png",
-    "images/m11.png",
-    "images/m12.png",
-    "images/m13.png",
-    "images/m14.png",
-    "images/m15.png",
-    "images/m16.png",
-    "images/m17.png",
+    "images/m21.png",
     "images/m18.png",
     "images/m19.png",
-    "images/m21.png"
+    "images/m8.png",
+    "images/m20.png"
 ]
 let cartasVolteadas = [];
 
