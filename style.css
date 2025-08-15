@@ -1,0 +1,101 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #ca5cc7 !important;
+}
+
+.bi-github {
+    font-size: 2rem;
+}
+
+#nivel.form-select {
+    background-color: #b141ae;
+    color: white;
+    border-color: #b141ae;
+}
+#nivel.form-select:focus {
+    box-shadow: none; /* quita el halo azul */
+}
+
+
+.navbar {
+    background-color: #972696 !important;
+}
+
+.navbar select{
+    background-color: #e477df;
+}
+
+.navbar .navbar-brand,
+.navbar h1,
+.navbar .nav-link,
+.navbar label{
+    color: white !important; /* texto en blanco */
+}
+
+#tablero {
+    display: grid;
+    gap: 8px;
+    padding: 8px;
+}
+
+/* Facil: 4 columnas */
+#tablero.facil {
+    grid-template-columns: repeat(4, minmax(60px, 1fr));
+}
+
+/* Medio: 6 columnas */
+#tablero.medio {
+    grid-template-columns: repeat(6, minmax(60px, 1fr));
+}
+
+/* Dificil: 8 columnas */
+#tablero.dificil {
+    grid-template-columns: repeat(8, minmax(60px, 1fr));
+}
+
+.menu{
+    justify-content: center;
+}
+
+.carta {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 130px; /* en pantallas grandes no crece más */
+    background-color: #972696;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 2px;
+    transition: transform 0.3s;
+}
+
+.carta img {
+    max-width: 90%;
+    max-height: 90%;
+    display: none;
+    outline: none;
+    padding: 0;           
+    margin: 0;            
+    border: none;        
+    background: none;     
+    box-shadow: none;  
+    object-fit: contain;
+}
+
+.carta.volteada img {
+    display: block;
+    border: none;
+    outline: none;
+    
+}
+
+.carta.volteada {
+    background-color:#972696;
+    transform: rotateY(180deg);
+    border: none;
+    outline: none;
+}
