@@ -26,10 +26,14 @@ let imagenes = [
     "images/m20.png"
 ]
 let cartasVolteadas = [];
+let paresEncontrados = 0;
+let paresNecesarios = 0;
+let filas = 0;
+let columnas = 0;
+
 
 jugar.addEventListener("click", () => {
     const dificultad = nivel.value;
-    let filas, columnas;
 
     if (dificultad === "facil") {
         filas = 3; columnas = 4;
@@ -44,8 +48,9 @@ jugar.addEventListener("click", () => {
 
 function iniciarJuego(filas, columnas) {
     tablero.innerHTML = ""; 
-    let totalCartas = filas * columnas;
-    let paresNecesarios = totalCartas / 2;
+    const totalCartas = filas * columnas;
+    paresNecesarios = totalCartas / 2;
+    paresEncontrados = 0;
 
     let imgNecesarias = imagenes.slice(0, paresNecesarios);
     let cartas = [...imgNecesarias, ...imgNecesarias];
@@ -81,6 +86,11 @@ function voltearCarta(carta){
             setTimeout(() => {
                 if(cartasVolteadas[0].querySelector("img").src !== cartasVolteadas[1].querySelector("img").src){
                     cartasVolteadas.forEach(c => c.classList.remove("volteada"));
+                } else {
+                    paresEncontrados++;
+                    if(paresEncontrados === paresNecesarios){
+                        cartelVictoria();
+                    }
                 }
                 cartasVolteadas = [];
             }, 800);
@@ -88,3 +98,12 @@ function voltearCarta(carta){
     }
 }
 
+function cartelVictoria(){
+    let modal = new bootstrap.Modal(document.getElementById('modalVictoria'));
+    modal.show();
+    const btnReiniciar = document.getElementById('reiniciarJuego');
+    btnReiniciar.onclick = () => {
+        modal.hide();               // Cerramos modal
+        iniciarJuego(filas, columnas); // Reiniciamos juego con las mismas filas y columnas
+    };
+}
