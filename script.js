@@ -39,7 +39,7 @@ jugar.addEventListener("click", () => {
     const dificultad = nivel.value;
 
     if (dificultad === "facil") {
-        filas = 3; columnas = 4;
+        filas = 4; columnas = 3;
     } else if (dificultad === "medio") {
         filas = 4; columnas = 4;
     } else if (dificultad === "dificil") {
