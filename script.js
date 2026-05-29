@@ -67,7 +67,7 @@ function iniciarJuego(filas, columnas, dificultad) {
    //     tablero.style.gridTemplateColumns = `repeat(auto-fit, 80px)`;
   //  }
     if ( dificultad === "medio") {
-           tablero.style.gridTemplateColumns = `repeat(${columnas}, 100px)`;
+           tablero.style.gridTemplateColumns = `repeat(auto-fit, 80px)`;
        }
     tablero.style.maxWidth = "fit-content"; 
     tablero.style.margin = "0 auto";
