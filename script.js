@@ -41,7 +41,7 @@ jugar.addEventListener("click", () => {
     if (dificultad === "facil") {
         filas = 4; columnas = 3;
     } else if (dificultad === "medio") {
-        filas = 5; columnas = 3;
+        filas = 4; columnas = 4;
     } else if (dificultad === "dificil") {
         filas = 5; columnas = 8;
     }
@@ -66,9 +66,7 @@ function iniciarJuego(filas, columnas, dificultad) {
   //  } else {
    //     tablero.style.gridTemplateColumns = `repeat(auto-fit, 80px)`;
   //  }
-    if ( dificultad === "medio") {
-           tablero.style.gridTemplateColumns = `repeat(auto-fit, 80px)`;
-       }
+    
     tablero.style.maxWidth = "fit-content"; 
     tablero.style.margin = "0 auto";
     
