@@ -41,7 +41,7 @@ jugar.addEventListener("click", () => {
     if (dificultad === "facil") {
         filas = 4; columnas = 3;
     } else if (dificultad === "medio") {
-        filas = 4; columnas = 4;
+        filas = 5; columnas = 3;
     } else if (dificultad === "dificil") {
         filas = 5; columnas = 8;
     }
