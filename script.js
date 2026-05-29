@@ -39,9 +39,9 @@ jugar.addEventListener("click", () => {
     const dificultad = nivel.value;
 
     if (dificultad === "facil") {
-        filas = 3; columnas = 4;
+        filas = 4; columnas = 3;
     } else if (dificultad === "medio") {
-        filas = 4; columnas = 4;
+        filas = 5; columnas = 3;
     } else if (dificultad === "dificil") {
         filas = 5; columnas = 8;
     }
@@ -61,11 +61,11 @@ function iniciarJuego(filas, columnas, dificultad) {
 
     tablero.style.display = "grid";
     // auto-fit rellena tantas columnas como entren, minmax asegura tamaño adaptable
-    if (dificultad === "facil" || dificultad === "medio") {
-        tablero.style.gridTemplateColumns = `repeat(${columnas}, 100px)`;
-    } else {
-        tablero.style.gridTemplateColumns = `repeat(auto-fit, 80px)`;
-    }
+    //if (dificultad === "facil" || dificultad === "medio") {
+   //     tablero.style.gridTemplateColumns = `repeat(${columnas}, 100px)`;
+  //  } else {
+   //     tablero.style.gridTemplateColumns = `repeat(auto-fit, 80px)`;
+  //  }
     
     tablero.style.maxWidth = "fit-content"; 
     tablero.style.margin = "0 auto";
